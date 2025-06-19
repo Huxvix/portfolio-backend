@@ -137,7 +137,7 @@ STATIC_URL = os.getenv('STATIC_URL', 'static/')
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Media files
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
 MEDIA_URL = ""
 
 # Default primary key field type
