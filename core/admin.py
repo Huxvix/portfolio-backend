@@ -18,7 +18,7 @@ class PersonalInfoAdmin(admin.ModelAdmin):
             'fields': ('linkedin_url', 'github_url')
         }),
         ('Files', {
-            'fields': ('resume_file',)
+            'fields': ('resume_url',)
         }),
         ('Availability', {
             'fields': ('is_available_for_work', 'availability_message')
@@ -32,7 +32,7 @@ class PersonalInfoAdmin(admin.ModelAdmin):
         if obj:  # Editing an existing object
             readonly.extend(['created_at', 'updated_at'])
         return readonly
-
+    
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'is_active')

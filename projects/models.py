@@ -1,11 +1,12 @@
 from django.db import models
+from cloudinary_storage.storage import MediaCloudinaryStorage
 
 # Create your models here.
 
 class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    image = models.ImageField(upload_to='projects/', blank=True, null=True)
+    image = models.ImageField(upload_to='projects/', storage=MediaCloudinaryStorage(), blank=True, null=True)
     url = models.URLField(blank=True)
     github_url = models.URLField(blank=True)
     skills = models.ManyToManyField('core.Skill', related_name='projects')
