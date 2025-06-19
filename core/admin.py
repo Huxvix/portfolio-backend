@@ -15,7 +15,7 @@ class PersonalInfoAdmin(admin.ModelAdmin):
             'fields': ('email', 'phone', 'location')
         }),
         ('Social Links', {
-            'fields': ('linkedin_url', 'github_url', 'twitter_url', 'portfolio_url')
+            'fields': ('linkedin_url', 'github_url')
         }),
         ('Files', {
             'fields': ('resume_file',)
