@@ -18,7 +18,7 @@ class PersonalInfoAdmin(admin.ModelAdmin):
             'fields': ('linkedin_url', 'github_url')
         }),
         ('Files', {
-            'fields': ('resume_file',)
+            'fields': ('resume_url',)
         }),
         ('Availability', {
             'fields': ('is_available_for_work', 'availability_message')
