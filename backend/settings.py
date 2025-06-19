@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     # Third party apps
     'rest_framework',
     'corsheaders',
+    'cloudinary',
+    'cloudinary_storage',
     
     # Local apps
     'core',
@@ -135,7 +137,8 @@ STATIC_URL = os.getenv('STATIC_URL', 'static/')
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Media files
-MEDIA_URL = os.getenv('MEDIA_URL', '/media/')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_URL = ""
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
