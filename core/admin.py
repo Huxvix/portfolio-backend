@@ -32,6 +32,13 @@ class PersonalInfoAdmin(admin.ModelAdmin):
         if obj:  # Editing an existing object
             readonly.extend(['created_at', 'updated_at'])
         return readonly
+    
+    def resume_link(self, obj):
+        if obj.resume_url:
+            return format_html('<a href="{}" target="_blank">view</a>',
+                               obj.resume_url)
+        return "-"
+    resume_link.short_description = "Résumé"
 
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):

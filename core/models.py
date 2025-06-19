@@ -1,6 +1,5 @@
 from django.db import models
 from cloudinary_storage.storage import MediaCloudinaryStorage
-from .storage_backends import CloudinaryPDFStorage
 
 # Create your models here.
 
@@ -18,7 +17,7 @@ class PersonalInfo(models.Model):
     github_url = models.URLField(blank=True, null=True)
     
     # Files
-    resume_file = models.FileField(upload_to='resume/', storage=CloudinaryPDFStorage(), blank=True, null=True)
+    resume_url = models.URLField("Résumé (public URL)", max_length=500, blank=True)
     
     # Availability
     is_available_for_work = models.BooleanField(default=True)
