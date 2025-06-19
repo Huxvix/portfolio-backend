@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary_storage.storage import MediaCloudinaryStorage
 
 # Create your models here.
 
@@ -6,7 +7,7 @@ class PersonalInfo(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=200)
     bio = models.TextField()
-    profile_picture = models.ImageField(upload_to='profile/', blank=True, null=True)
+    profile_picture = models.ImageField(upload_to='profile/', storage=MediaCloudinaryStorage(), blank=True, null=True)
     email = models.EmailField()
     phone = models.CharField(max_length=20, blank=True, null=True)
     location = models.CharField(max_length=100, blank=True, null=True)
@@ -16,7 +17,7 @@ class PersonalInfo(models.Model):
     github_url = models.URLField(blank=True, null=True)
     
     # Files
-    resume_file = models.FileField(upload_to='resume/', blank=True, null=True)
+    resume_file = models.FileField(upload_to='resume/', storage=MediaCloudinaryStorage(), blank=True, null=True)
     
     # Availability
     is_available_for_work = models.BooleanField(default=True)
