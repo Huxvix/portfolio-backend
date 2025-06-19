@@ -6,7 +6,7 @@ class PersonalInfoSerializer(serializers.ModelSerializer):
         model = PersonalInfo
         fields = [
             'id', 'name', 'title', 'bio', 'profile_picture', 'email', 'phone', 'location',
-            'linkedin_url', 'github_url', 'twitter_url', 'portfolio_url',
+            'linkedin_url', 'github_url',
             'resume_file', 'is_available_for_work', 'availability_message',
             'created_at', 'updated_at'
         ]

@@ -14,8 +14,6 @@ class PersonalInfo(models.Model):
     # Social links
     linkedin_url = models.URLField(blank=True, null=True)
     github_url = models.URLField(blank=True, null=True)
-    twitter_url = models.URLField(blank=True, null=True)
-    portfolio_url = models.URLField(blank=True, null=True)
     
     # Files
     resume_file = models.FileField(upload_to='resume/', blank=True, null=True)
